@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript DOM Manipulation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+    }
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: coral;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 id="main-title">Welcome to DOM Magic</h1>
+  </header>
+
+  <nav>
+    <p>This is a simple navigation bar (placeholder)</p>
+  </nav>
+
+  <main>
+    <section>
+      <p id="description">Click the button below to change this text!</p>
+      <button onclick="changeText()">Change Text</button>
+    </section>
+
+    <article>
+      <p>Click below to show or hide a colorful box.</p>
+      <button onclick="toggleBox()">Toggle Box</button>
+      <div id="box"></div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wambui</p>
+  </footer>
+
+  <script>
+    function changeText() {
+      const title = document.getElementById("main-title");
+      const desc = document.getElementById("description");
+
+      // Change text content
+      title.textContent = "DOM Manipulation Successful!";
+      desc.textContent = "This content was changed using JavaScript.";
+
+      // Modify styles
+      title.style.color = "purple";
+      title.style.fontSize = "2.5rem";
+      desc.style.fontWeight = "bold";
+    }
+
+    function toggleBox() {
+      const box = document.getElementById("box");
+
+      if (box.style.display === "none") {
+        box.style.display = "block";
+      } else {
+        box.style.display = "none";
+      }
+    }
+
+    // Optional: hide box by default
+    document.getElementById("box").style.display = "none";
+  </script>
+
+</body>
+</html>
